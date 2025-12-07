@@ -1,4 +1,5 @@
 import express from "express";
+import { Server } from "node:http";
 
 const app = express();
 
@@ -6,9 +7,12 @@ app.get("/", (req, res) => {
   res.send("Backend is running successfully!");
 });
 
-const port = parseInt(process.env.PORT || "3001", 10);
+const port = process.env.PORT || 3001;
 
-// IMPORTANT: Only use this Node format
-app.listen(port, "127.0.0.1", () => {
-  console.log(`Server running at http://127.0.0.1:${port}`);
-});
+app.listen(
+  Number(port),
+  "0.0.0.0",
+  () => {
+    console.log(`Server running at http://0.0.0.0:${port}`);
+  }
+);
