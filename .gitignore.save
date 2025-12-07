@@ -1,0 +1,25 @@
+# Backend ignored folders
+node_modules/
+dist/
+.local/
+attached_assets/
+
+# Frontend ignored folders
+client/frontend/node_modules/
+client/frontend/dist/
+
+# OS and environment files
+.DS_Store
+.env
+*.log
+*.bin
+
+# Images and binaries
+*.png
+*.jpg
+*.jpeg
+
+# Replit agent files
+.local/state/
+y
+
