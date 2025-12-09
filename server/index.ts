@@ -33,6 +33,18 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 3001;
 
-app.listen(Number(port), "0.0.0.0", () => {
-  console.log(`Server running at http://0.0.0.0:${port}`);
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
+
+// GET /products → return example product list
+app.get("/products", (req, res) => {
+  const products = [
+    { id: "p1", title: "Complex NPK 20-20-20 (25kg)", price: 899.0, desc: "Balanced nutrient for vegetables" },
+    { id: "p2", title: "Bio-fertilizer (1L)", price: 249.0, desc: "Organic growth promoter" },
+    { id: "p3", title: "Drip irrigation kit", price: 1799.0, desc: "Complete starter kit" },
+    { id: "p4", title: "Protective Gloves (pair)", price: 199.0, desc: "Safety gloves for spraying" }
+  ];
+
+  res.json(products);
 });
